@@ -40,4 +40,4 @@ Rank 3: Bob
 Visualiser:
 https://tideman.netlify.app/
 <br>
-PS: <b>data.txt</b> can be passed to the <b>CLI</b> using ./tideman Alice Bob Charlie < data.txt and <b>tideman.o</b> is already a compiled file with <b>clang</b>.
+PS: <b>data.txt</b> can be passed to the <b>CLI</b> using ./tideman Alice Bob Charlie < data.txt and I provided <b>tideman.o</b> - already a compiled file with <b>clang</b>.
