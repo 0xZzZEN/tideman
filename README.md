@@ -39,3 +39,5 @@ Rank 3: Bob
 <br><br>
 Visualiser:
 https://tideman.netlify.app/
+<br>
+PS: data.txt can be passed to the <b>CLI</b> using ./tideman Alice Bob Charlie < data.txt and tideman.o is already compiled file with clang.
