@@ -1,5 +1,5 @@
 # tideman
-CS50x hardest problem from pset3.
+Probably the hardest CS50x problem, from pset3.
 
 Problem to solve:
 Based on ballots input determine the winner of an election: every voter gets one vote, and the candidate with the most votes wins.
