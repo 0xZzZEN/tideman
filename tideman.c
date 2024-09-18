@@ -235,9 +235,9 @@ void lock_pairs(void)
         // we lock pairs, when we check if locked pairs make a cycle within graph using dfs and if it's true, we unlock we pair
         locked[pairs[i].winner][pairs[i].loser] = true;
 
-        // cycle checker, if cycle false, we unlock pair
+        // cycle checker, dfs should return 2 to indicate that cycle detected, therefore we unlock pair
         return_dfs = dfs();
-        if (return_dfs == 1)
+        if (return_dfs == 2)
         {
             locked[pairs[i].winner][pairs[i].loser] = false;
         }
@@ -417,7 +417,7 @@ function DFS(graph, start):
                         free(stackFrontier);
                         free(exploredSet);
                         free(pathStack);
-                        return 1;
+                        return 2;
                     }
                 }
                 if (topOfPath != -1)
