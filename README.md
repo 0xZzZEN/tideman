@@ -42,4 +42,4 @@ Winner: Alice
 Visualiser:
 https://tideman.netlify.app/
 <br>
-PS: <b>data.txt</b> can be passed to the <b>CLI</b> using ./tideman Alice Bob Charlie < data.txt and I provided <b>tideman</b> - compiled file with <b>clang18.1</b> on <b>linux</b>.
+PS: <b>data.txt</b> can be passed to the <b>CLI</b> using ./tideman Alice Bob Charlie < data.txt and I provided <b>tideman</b> - executable file compiled with <b>clang18.1</b> on <b>linux</b>.
