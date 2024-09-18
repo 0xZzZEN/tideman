@@ -232,7 +232,7 @@ void lock_pairs(void)
     int return_dfs;
     for (int i = 0; i < pair_count; i++)
     {
-        // we lock pairs, when we check if locked pairs make a cycle within graph using dfs and if it's true, we unlock we pair
+        // we lock pairs, when we check if locked pairs make a cycle within graph using dfs and if it's true, we unlock pair
         locked[pairs[i].winner][pairs[i].loser] = true;
 
         // cycle checker, dfs should return 2 to indicate that cycle detected, therefore we unlock pair
@@ -298,7 +298,7 @@ int StackFindEl(int stack[], int element)
 {
     for (int x = 0; x < candidate_count; x++)
     {
-        if (stack[x] == element)
+        if (stack[x] == element) // linear search isn't the best solution, but 56 max candidates is cheap
         {
             return 1;
         }
@@ -365,9 +365,9 @@ function DFS(graph, start):
     // to keep track of the top element
     int topOfFrontier = -1, topOfExplored = -1, topOfPath = -1; //-1 means it's empty
 
-    int visited_count = 0, parent_node = 0, recent_neighbor = 0, i, j, last_traversed_node;
+    int visited_count = 0, parent_node = 0, recent_neighbor = 0, last_traversed_node;
 
-    for (i = 0; i < pair_count; i++)
+    for (int i = 0; i < pair_count; i++)
     {
         if (locked[pairs[i].winner][pairs[i].loser]) // if pairs exist we can try dfs
         {
@@ -390,7 +390,7 @@ function DFS(graph, start):
                         // expand with neighbours, traversing locked pairs inside 2d locked array
                         bool all_neighbors_explored = true;
 
-                        for (j = 0; j < candidate_count; j++)
+                        for (int j = 0; j < candidate_count; j++)
                         {
                             if (locked[parent_node][j]) // neighbor exist if i->j
                             {
@@ -412,9 +412,8 @@ function DFS(graph, start):
                     }
                     else if (StackFindEl(pathStack, last_traversed_node) == 1) // cycle detected if in gray set
                     {
-                        printf("Dfs detected cycle in locked 2d array of size %i*%i on the step locked[%i][%i]. Making "
-                               "locked[%i][%i] = 'false'\n",
-                               candidate_count, candidate_count, parent_node, recent_neighbor, parent_node, recent_neighbor);
+                        printf("Dfs detected cycle on the step locked[%i][%i]. Making "
+                               "locked[%i][%i] = 'false'\n", parent_node, recent_neighbor, parent_node, recent_neighbor);
                         free(stackFrontier);
                         free(exploredSet);
                         free(pathStack);
@@ -430,9 +429,13 @@ function DFS(graph, start):
             }
         }
     }
-    printf("Dfs finished for locked 2d array of size %i*%i. No cycle detected from 'locked[i][j] = true, i and j < %i' to the "
-           "locked[%i][%i].\n",
-           candidate_count, candidate_count, candidate_count, parent_node, recent_neighbor);
+    // print explored set
+    /*printf("Dfs finished. No cycle detected from starting point %i to point %i. ExploredSet: ", exploredSet[0], last_traversed_node);
+    for (int i = candidate_count; i > 0; i--) // we start from the top of the stack
+    {
+        printf("%i\b", exploredSet[i]);
+    }*/
+    printf("\n");
     // don't forget to free allocated memory
     free(stackFrontier);
     free(exploredSet);
@@ -456,7 +459,7 @@ void print_winner(void)
         }
         if (is_winner) // check if there's a candidate who doesn't lose to anyone
         {
-            printf("%s\n", candidates[i]);
+            printf("Winner is %s\n", candidates[i]);
             return;
         }
     }
