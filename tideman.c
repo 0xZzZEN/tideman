@@ -335,7 +335,7 @@ function DFS(graph, start):
     if (stackFrontier == NULL)
     {
         printf("Can't allocate memory to the stackFrontier, sorry.");
-        return 0;
+        return 1;
     }
     // exploredSet contains explored edges (starting from locked[0][0])
     // int exploredSet[pair_count*2] = {0};
@@ -343,14 +343,14 @@ function DFS(graph, start):
     if (exploredSet == NULL)
     {
         printf("Can't allocate memory to the exploredSet, sorry.");
-        return 0;
+        return 1;
     }
 
     int *pathStack = malloc(candidate_count * sizeof(int)); // gray set
     if (pathStack == NULL)
     {
         printf("Can't allocate memory to the pathStack, sorry.");
-        return 0;
+        return 1;
     }
 
     // populate arrays with empty values
@@ -436,7 +436,7 @@ function DFS(graph, start):
     free(stackFrontier);
     free(exploredSet);
     free(pathStack);
-    return 2;
+    return 0;
 }
 
 // Print the winner of the election
