@@ -229,7 +229,7 @@ void swap(pair *ppairs_i, pair *ppairs_ipl1)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    int return_dfs = 0;
+    int return_dfs;
     for (int i = 0; i < pair_count; i++)
     {
         // we lock pairs, when we check if locked pairs make a cycle within graph using dfs and if it's true, we unlock we pair
@@ -242,6 +242,7 @@ void lock_pairs(void)
             locked[pairs[i].winner][pairs[i].loser] = false;
         }
         // printf("locked[%i][%i] == %i\n", pairs[i].winner, pairs[i].loser, locked[pairs[i].winner][pairs[i].loser]);
+        // to do in future: add if statement for not enough memory
     }
 
     // debug
