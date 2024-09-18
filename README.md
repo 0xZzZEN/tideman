@@ -37,6 +37,8 @@ Rank 1: Charlie
 Rank 2: Alice
 Rank 3: Bob
 <br><br>
+Winner: Alice
+<br><br>
 Visualiser:
 https://tideman.netlify.app/
 <br>
