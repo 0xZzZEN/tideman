@@ -1,5 +1,5 @@
 # tideman
-The hardest <b>CS50x</b> problem (it was for me at least), from <b>pset3</b>, year 2023.
+The hardest <b>CS50x</b> problem (it was for me at least), from <b>pset3</b>, year 2024.
 <br>
 ### Problem to solve:
 Based on ballots input, determine the winner of an election: every voter gets one vote, and the candidate with the most votes wins.
