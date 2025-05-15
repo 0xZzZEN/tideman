@@ -344,6 +344,7 @@ function DFS(graph, start):
     if (exploredSet == NULL)
     {
         printf("Can't allocate memory to the exploredSet, sorry.");
+        free(stackFrontier);
         return 1;
     }
 
@@ -351,6 +352,8 @@ function DFS(graph, start):
     if (pathStack == NULL)
     {
         printf("Can't allocate memory to the pathStack, sorry.");
+        free(stackFrontier);
+        free(exploredSet);
         return 1;
     }
 
