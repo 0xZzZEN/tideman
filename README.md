@@ -11,7 +11,7 @@ https://cs50.harvard.edu/x/2024/psets/3/tideman/
 <br><br>
 My approach was to use <b>Depth First Search</b> with <b>stack</b> implementation using <b>dynamic memory allocation</b>. I'm still a learner and on a long way to write robust C code, but <b>valgrind</b> said <b>no memory leaks</b> :D 
 <br>
-PS: i used cs50.h library to define <b>typedef char *string</b>, <b>int i = get_int("Prompt: ") (get_int is scanf("%i", &i) implementation)</b>, <b>string s = get_string("Prompt: ")</b>, but this was only to make sure to pass the <b>check50</b>.
+PS: i used cs50.h to define <b>typedef char *string</b>, <b>int i = get_int("Prompt: ") (get_int is scanf("%i", &i) implementation)</b>, <b>string s = get_string("Prompt: ")</b>, but this was only to make sure to pass the <b>check50</b>.
 ### Example:
 ./tideman Alice Bob Charlie
 <br><br>
